@@ -23,6 +23,18 @@ def decode(digits, base):
     # ...
     # TODO: Decode digits from any base (2 up to 36)
     # ...
+    digits = list(digits)
+    power = len(digits) - 1
+    print('base:', base)
+    number = []
+
+    for digit in digits:
+        x = (base ** power) * int(digit)
+        print('digit:', digit, ' power: ', power)
+
+        number.append(x)
+        power -= 1
+    return sum(number)
 
 
 def encode(number, base):
@@ -78,4 +90,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    # main()
+    print(decode('123', 9))
