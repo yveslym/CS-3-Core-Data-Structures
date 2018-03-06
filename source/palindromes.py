@@ -21,23 +21,22 @@ def is_palindrome_iterative(text):
     # TODO: implement the is_palindrome function iteratively here
 
     '''1 remove all punctuations and whitespace'''
-    clean_text = []
+    clean_text = ''
     reversed_word = ''
     for char in text:
         if char not in string.punctuation and char != ' ':
             '''append the string character'''
-            clean_text.append(char)
+            clean_text += char
 
     ''' 2 turn the clean_text array to string'''
     clean_text = ''.join(clean_text)
 
     ''' 3 turn text in lower case'''
     clean_text = clean_text.lower()
-    print(clean_text)
 
     ''' 4 reverse clean_text'''
-    for word in clean_text:
-        reversed_word = word+reversed_word
+    for char in clean_text:
+        reversed_word = char + reversed_word
 
     ''' 5 check if text is palindrome'''
     if clean_text == '':
@@ -71,5 +70,5 @@ def main():
 
 
 if __name__ == '__main__':
-    #main()
-    print(is_palindrome_iterative('hannah'))
+    main()
+    #print(is_palindrome_iterative('hannah'))
