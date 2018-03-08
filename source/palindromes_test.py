@@ -81,7 +81,8 @@ class TestPalindromes(unittest.TestCase):
         assert is_palindrome('ABCDDCBZ') is False
         assert is_palindrome('AAAAZAAA') is False
         assert is_palindrome('AAAAAAAZ') is False
-
+    def test_find_index(self):
+        assert find_index('aaaaab','aaab') == 2
 
 if __name__ == '__main__':
     unittest.main()
