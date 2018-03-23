@@ -36,7 +36,8 @@ class LinkedQueue(object):
 
     def enqueue(self, item):
         """Insert the given item at the back of this queue.
-        Running time: O(???) – Why? [TODO]"""
+        Running time: O(1) – Why? Because it is a single operation
+        and doesn't iteract through the list"""
         # TODO: Insert given item
         self.list.append(item)
 
@@ -50,7 +51,7 @@ class LinkedQueue(object):
         if self.list.length() != 0:
             return self.list.head.data
         else:
-            raise ValueError('there list is empty')
+            raise ValueError('the list is empty')
 
         '''running time 0(1)'''
 
@@ -58,7 +59,9 @@ class LinkedQueue(object):
     def dequeue(self):
         """Remove and return the item at the front of this queue,
         or raise ValueError if this queue is empty.
-        Running time: O(???) – Why? [TODO]"""
+        Running time: O(1) – Why? Because we are doing a single operation
+        without interacting through a list. First, getting data from the
+        head, next, move the head to the next node, and last return the data"""
         # TODO: Remove and return front item, if any
         if self.length != 0:
             data = self.list.head.data
@@ -101,7 +104,8 @@ class ArrayQueue(object):
 
     def enqueue(self, item):
         """Insert the given item at the back of this queue.
-        Running time: O(???) – Why? [TODO]"""
+        Running time: O(1) – Why? Because it is a single operation
+        and doesn't iteract through the list"""
         # TODO: Insert given item
         self.list.append(item)
 
@@ -114,7 +118,7 @@ class ArrayQueue(object):
     def dequeue(self):
         """Remove and return the item at the front of this queue,
         or raise ValueError if this queue is empty.
-        Running time: O(???) – Why? [TODO]"""
+        Running time: O(1) – Why? [TODO]"""
         # TODO: Remove and return front item, if any
         return self.list.pop(1)
 
