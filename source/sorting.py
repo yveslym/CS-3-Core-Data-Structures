@@ -82,6 +82,39 @@ def merge(items1, items2):
     # TODO: Repeat until one list is empty
     # TODO: Find minimum item in both lists and append it to new list
     # TODO: Append remaining items in non-empty list to new list
+    items1 = selection_sort(items1)
+    items2 = selection_sort(items2)
+
+    result = []
+    size = 0
+    '''get the length of longest list'''
+    if len(items1) > len(items2):
+        size = len(item1)
+        longest = items1
+        short = items2
+    else:
+        size = len(items2)
+        longest = items2
+        short = items1
+
+    for i in range(0,size):
+        if short != []:
+            #check the smallest number
+            if longest[0] < short[0]:
+                result.append(longest[i])
+                result.append(short[0])
+                longest.pop(0)
+                short.pop(0)
+            else:
+                result.append(short[0])
+                result.append(longest[0])
+                longest.pop(0)
+                short.pop(0)
+        else:
+            result.append(longest[0])
+            longest.pop(0)
+    return result
+
 
 
 def split_sort_merge(items):
@@ -227,4 +260,4 @@ def main():
 if __name__ == '__main__':
     #main()
     #bubble_sort([5,4,3,2,1])
-    print(selection_sort([20,87,3,4,1,3,2,4,56]))
+    print(merge([1,4,9,6,3],[2,6,0,4,6, 9, 11]))
