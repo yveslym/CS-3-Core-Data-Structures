@@ -6,6 +6,17 @@ def is_sorted(items):
     TODO: Running time: ??? Why and under what conditions?
     TODO: Memory usage: ??? Why and under what conditions?"""
     # TODO: Check that all adjacent items are in order, return early if not
+    size = len(items)
+    for index in range(len(items) - 1):
+
+        if items[index] > items[index + 1]:
+
+            return False
+            continue
+
+    print("sorted")
+    return True
+
 
 
 def bubble_sort(items):
@@ -15,6 +26,26 @@ def bubble_sort(items):
     TODO: Memory usage: ??? Why and under what conditions?"""
     # TODO: Repeat until all items are in sorted order
     # TODO: Swap adjacent items that are out of order
+    index = 0
+    print("before sorting: ", items)
+
+    while is_sorted(items) is False:
+        if index == len(items) - 1:
+            index = 0
+            print("back to index = 0")
+        if items[index] > items[index + 1]:
+            temp = items[index]
+            items[index] = items[index+1]
+            items[index+1] = temp
+            index += 1
+            print(items)
+
+    return (items)
+    print("After sorting: ",items)
+
+
+#def swap(item1, item2):
+    #item1,item2 = item2,item1
 
 
 def selection_sort(items):
@@ -26,6 +57,11 @@ def selection_sort(items):
     # TODO: Find minimum item in unsorted items
     # TODO: Swap it with first unsorted item
 
+    for i in range(0, len(items)):
+        for j in range(i, len(items)):
+            if items[i] > items[j]:
+                items[i],items[j] = items[j],items[i]
+    return items
 
 def insertion_sort(items):
     """Sort given items by taking first unsorted item, inserting it in sorted
@@ -35,6 +71,7 @@ def insertion_sort(items):
     # TODO: Repeat until all items are in sorted order
     # TODO: Take first unsorted item
     # TODO: Insert it in sorted order in front of items
+
 
 
 def merge(items1, items2):
@@ -186,5 +223,8 @@ def main():
     test_sorting(sort_function, num_items, max_value)
 
 
+
 if __name__ == '__main__':
-    main()
+    #main()
+    #bubble_sort([5,4,3,2,1])
+    print(selection_sort([20,87,3,4,1,3,2,4,56]))
