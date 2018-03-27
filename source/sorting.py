@@ -86,20 +86,19 @@ def merge(items1, items2):
 
     for i in range(0,size):
         if short != []:
-            #check the smallest number
+            #check the smallest number and append first
             if longest[0] < short[0]:
-                result.append(longest[0])
-                result.append(short[0])
-                longest.pop(0)
-                short.pop(0)
+                result.append(longest.pop(0))
+                result.append(short.pop(0))
+                result = selection_sort(result)
             else:
-                result.append(short[0])
-                result.append(longest[0])
-                longest.pop(0)
-                short.pop(0)
+                result.append(longest.pop(0))
+                result.append(short.pop(0))
+                result = selection_sort(result)
         else:
-            result.append(longest[0])
-            longest.pop(0)
+            result.append(longest.pop(0))
+
+
     return result
 
 
@@ -245,6 +244,6 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    #main()
     #bubble_sort([5,4,3,2,1])
-    #print(merge([1,4,9,6],[2,6,0,4,6, 9, 11]))
+    print(merge([1,2],[3,4]))
